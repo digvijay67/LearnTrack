@@ -1,0 +1,29 @@
+package com.airtribe.learntrack.repository;
+
+import com.airtribe.learntrack.entity.Enrollment;
+import java.util.*;
+
+
+import com.airtribe.learntrack.entity.Enrollment;
+import java.util.ArrayList;
+import java.util.List;
+
+public class EnrollmentRepository {
+
+    private List<Enrollment> enrollments = new ArrayList<>();
+
+    public void save(Enrollment e) { enrollments.add(e); }
+
+    public Enrollment findById(int id) {
+        for (Enrollment e : enrollments) {
+            if (e.getId() == id) return e;
+        }
+        return null;
+    }
+
+    public List<Enrollment> findAll() {
+        return new ArrayList<>(enrollments);
+    }
+
+}
+
